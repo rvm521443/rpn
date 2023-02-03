@@ -2,8 +2,8 @@ import collections
 
 
 class Calc:
-    def __init__(self, st = None):
-        it = st or [0.0] * 4
+    def __init__(self, it = None):
+        it = it or [0.0] * 4
         self._st = collections.deque(it, maxlen=4)
 
     @property
