@@ -31,6 +31,9 @@ class TestCalcSp(TestCalc):
         self.calc.push()
         self.assertEqual(self.calc.st, [2.0, 3.0, 4.0, 4.0])
 
+    def testSwapXY(self):
+        self.calc.swap_xy()
+        self.assertEqual([1.0, 2.0, 4.0, 3.0], self.calc.st)
 
 
 if __name__ == '__main__':

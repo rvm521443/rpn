@@ -20,6 +20,10 @@ class Calc:
     def push(self):
         self._st.append(self._st[-1])
 
+    def swap_xy(self):
+        st = self._st
+        st[-1], st[-2] = st[-2], st[-1]
+
     def __repr__(self):
         return f'Calc({self.st})'
 
