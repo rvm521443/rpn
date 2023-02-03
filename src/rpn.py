@@ -11,7 +11,8 @@ class Calc:
         return list(self._st)
 
     def op1(self, fn):
-        self._st[-1] = fn(self._st[-1])
+        st = self._st
+        st.append(fn(st.pop()))
 
     def put(self, val):
         self._st.append(val)
