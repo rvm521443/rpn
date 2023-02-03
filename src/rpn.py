@@ -1,11 +1,21 @@
+import collections
+
+
 class Calc:
     def __init__(self, st = None):
-        self._st = st or [0.0, 0.0, 0.0, 0.0]
+        it = st or [0.0] * 4
+        self._st = collections.deque(it, maxlen=4)
 
     @property
     def st(self):
-        return self._st
+        return list(self._st)
 
     def op1(self, fn):
         self._st[-1] = fn(self._st[-1])
+
+    def put(self, val):
+        self._st.append(val)
+    
+    def push(self):
+        self._st.append(self._st[-1])
 
