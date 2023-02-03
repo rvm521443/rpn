@@ -19,3 +19,6 @@ class Calc:
     def push(self):
         self._st.append(self._st[-1])
 
+    def __repr__(self):
+        return f'Calc({self.st})'
+
