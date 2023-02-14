@@ -13,6 +13,10 @@ class Calc:
     def op1(self, fn):
         st = self._st
         st.append(fn(st.pop()))
+    
+    def op2(self, fn):
+        st = self._st
+        st.append(fn(st[-2], st[-1]))
 
     def put(self, val):
         self._st.append(val)

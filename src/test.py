@@ -1,5 +1,6 @@
 import unittest
 import rpn
+import operator
 
 
 class TestCalc(unittest.TestCase):
@@ -12,6 +13,15 @@ class TestCalcOp1(TestCalc):
         self.calc.op1(lambda x: x * x)
         self.assertEqual([1.0, 2.0, 3.0, 16.0], self.calc.st)
 
+
+class TestCalcOp2(TestCalc):
+    def testAdd(self):
+        self.calc.op2(operator.add)
+        self.assertEqual([2.0, 3.0, 4.0, 7.0], self.calc.st)
+
+    def testSub(self):
+        self.calc.op2(operator.sub)
+        self.assertEqual([2.0, 3.0, 4.0, -1.0], self.calc.st)
 
 class TestCalcSp(TestCalc):
     def testClear(self):
