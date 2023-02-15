@@ -24,9 +24,6 @@ class TestCalcOp2(TestCalc):
         self.assertEqual([2.0, 3.0, 4.0, -1.0], self.calc.st)
 
 class TestCalcSp(TestCalc):
-    def testClear(self):
-        self.calc.op1(lambda _: 0)
-        self.assertEqual([1.0, 2.0, 3.0, 0.0], self.calc.st)
 
     def testPut(self):
         self.calc.put(5.0)

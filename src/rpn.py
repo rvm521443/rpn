@@ -2,8 +2,8 @@ import collections
 
 
 class Calc:
-    def __init__(self, it = None):
-        it = it or [0.0] * 4
+    def __init__(self, it=None):
+        it = it or [.0] * 4
         self._st = collections.deque(it, maxlen=4)
 
     @property
@@ -12,8 +12,8 @@ class Calc:
 
     def op1(self, fn):
         st = self._st
-        st.append(fn(st.pop()))
-    
+        st[-1] = fn(st[-1])
+
     def op2(self, fn):
         st = self._st
         st.append(fn(st[-2], st[-1]))
